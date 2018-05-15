@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Prueba</title>
+    <title>Backup de Aplicaciones</title>
 	  <style type="text/css">
   body {
 	color: purple;
@@ -31,7 +31,8 @@
 <script src="./js/script.js"></script>
 
     <ul>
-	
-	  </ul>
+	<input type="submit" value="GCPAAP234" onclick = "location='Apps GCPAAP234.html'"/>
+	<input type="submit" value="GCPAAP235" onclick = "location='Apps GCPAAP235.html'"/>
+    </ul>
 </body>
 </html>
