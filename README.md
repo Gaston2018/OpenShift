@@ -1,1 +1,1 @@
-# OpenShift
+Aplicación de Envío de Correos Masivo.
