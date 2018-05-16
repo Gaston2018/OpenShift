@@ -1,0 +1,296 @@
+﻿@model app.Models.MailData
+@{
+    ViewData["Title"] = "Inicio / Correo Masivo";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#presupuesto" aria-controls="home" role="tab" data-toggle="tab">Presupuesto</a></li>
+                    <li role="presentation"><a href="#renovacion" aria-controls="profile" role="tab" data-toggle="tab">Renovación</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content tabs">
+                    <!-- Tab Panel -- Presupuesto -->
+                    <div role="tabpanel" class="tab-pane fade in active" id="presupuesto">
+                        @*<h3>Envío de Presupuestos</h3>*@
+                        <div class="container-contact100">
+                            <div class="wrap-contact100">
+                                <form asp-controller="Home" asp-action="EnvioMailMasivo" enctype="multipart/form-data" method="post" class="contact100-form validate-form">
+                                    <span class="contact100-form-title">
+                                        Envio de Mails Masivo (Presupuestos)
+                                    </span>
+                                    <label class="label-input100" for="email">Seleccione Template</label>
+                                    <div class="wrap-input100 validate-input" data-validate="Debe seleccionar un Word">
+                                        <input type="file" name="files" id="file-1" class="inputfile inputfile-1 input100" accept=".doc, .docx" />
+                                        <label for="file-1" style="margin-left:20px; margin-top:10px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" /></svg>
+                                            <span>Subir Template</span>
+                                        </label>
+                                    </div>
+
+                                    <label class="label-input100" for="email">Seleccione Excel de datos</label>
+                                    <div class="wrap-input100 validate-input" data-validate="Debe seleccionar un Excel">
+                                        <input type="file" name="files" id="file-2" class="inputfile inputfile-2 input100" accept=".xls, .xlsx, .csv" />
+                                        <label for="file-2" style="margin-left:20px; margin-top:10px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" /></svg>
+                                            <span>Subir Excel</span>
+                                        </label>
+                                    </div>
+
+                                    <label class="label-input100" for="remitente">Remitente</label>
+                                    <div class="wrap-input100 validate-input" data-validate="Ingrese un mail válido: ej@email.com">
+                                        <input asp-for="Sender" class="input100" placeholder="Ej. ejemplo@email.com">
+                                        <span class="focus-input100"></span>
+                                    </div>
+
+                                    <label class="label-input100" for="asunto">Asunto</label>
+                                    <div class="wrap-input100 validate-input" data-validate="Ingrese un asunto">
+                                        <input asp-for="Subject" class="input100" placeholder="Ej. Asunto">
+                                        <span class="focus-input100"></span>
+                                    </div>
+
+                                    <label class="label-input100" for="mensaje">Cuerpo del Mail</label>
+                                    <div class="wrap-input100 validate-input" data-validate="Ingrese su mensaje">
+                                        <textarea asp-for="Message" class="input100" placeholder="Escriba su mensaje"></textarea>
+                                        <span class="focus-input100"></span>
+                                    </div>
+
+
+                                    <div class="container-contact100-form-btn">
+                                        <button class="contact100-form-btn">
+                                            Enviar Mail
+                                        </button>
+                                    </div>
+                                </form>
+
+                                @*Comentarios o Pasos para realizar el Proceso*@
+                                <div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
+                                    <div class="flex-w size1 p-b-47" style="width:450px;">
+                                        <div class="txt1 p-r-25">
+                                            <span class="lnr lnr-bookmark"></span>
+                                        </div>
+
+                                        <div class="flex-col size2">
+                                            <span class="txt1 p-b-20">
+                                                Paso 1
+                                            </span>
+
+                                            <span class="txt2">
+                                                * Crear un archivo excel, que contenga obligatoriamente una columna con el nombre de "Email" y NO PUEDE TENER COLUMNAS SIN DATOS. El nombre de la columna debe ser "Email", sin espacios, ya que cualquier otro nombre producirá un error en la aplicación.@*<a style="color:#00ad5f;" href="http://google.com/">Google</a>*@
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="dis-flex size1 p-b-47" style="width:450px;">
+                                        <div class="txt1 p-r-25">
+                                            <span class="lnr lnr-pencil"></span>
+                                        </div>
+
+                                        <div class="flex-col size2">
+                                            <span class="txt1 p-b-20">
+                                                Paso 2
+                                            </span>
+
+                                            <span class="txt2">
+                                                * Crear un archivo de word, con el texto que el Usuario quiera enviar como adjunto a los mails.
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="dis-flex size1 p-b-47" style="width:450px;">
+                                        <div class="txt1 p-r-25">
+                                            <span class="lnr lnr-envelope"></span>
+                                        </div>
+
+                                        <div class="flex-col size2">
+                                            <span class="txt1 p-b-20">
+                                                Paso 3
+                                            </span>
+
+                                            <span class="txt2">
+                                                * La aplicación permite al Usuario componer el texto del CUERPO DEL MAIL(1), el ASUNTO DEL MAIL(2) y el ARCHIVO ADJUNTO DE WORD(3) mediante la utilización de palabras claves relacionadas a las columnas del archvio excel.
+                                                <br />
+                                                El funcionamiento de la composición del texto funciona de la siguiente manera:
+                                                <br />
+                                                <br />
+                                                * Si el Usuario necesita que la información de la columna "POLIZA" aparezca en el archivo de word adjunto, solamente deberá escribir en el archivo word (del PASO 2) la etiqueta #POLIZA#.
+                                                <br />
+                                                * EJEMPLO: Texto del archivo word>>>>   "... queremos informarle que la póliza #POLIZA# ha sido renovada..."
+                                                <br />
+                                                Como lo compondrá la aplicación>>>"... queremos informarle que la póliza 3569582 ha sido renovada..."
+                                                <br />
+                                                * Si el Usuario necesita componer el CUERPO DEL MAIL(1) ó el ASUNTO DEL MAIL(2) deberá utilizar las mismas etiquetas.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tab Panel -- Renovación -->
+                    <div id="renovacion" role="tabpanel" class="tab-pane fade">
+                        @*<h3>Envío de Renovaciones</h3>*@
+                        <div class="container-contact100">
+                            <div class="wrap-contact100">
+                                <form asp-controller="Home" asp-action="EnvioMailMasivoRenovacion" enctype="multipart/form-data" method="post" class="contact100-form validate-form">
+                                    <span class="contact100-form-title">
+                                        Envio de Mails Masivo (Renovaciones)
+                                    </span>
+
+                                    <label class="label-input100" for="email">Seleccione el Csv con los datos</label>
+                                    <div class="wrap-input100 validate-input" data-validate="Debe seleccionar un archivo .csv">
+                                        <input type="file" name="csvfiles" id="csvfile" class="inputfile inputfile-2 input100" accept=".xls, .xlsx, .csv" />
+                                        <label for="csvfile" style="margin-left:20px; margin-top:10px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" /></svg>
+                                            <span>Subir CSV con Datos</span>
+                                        </label>
+                                    </div>
+
+                                    <label class="label-input100" for="sender">Remitente</label>
+                                    <div class="wrap-input100 validate-input" data-validate="Ingrese un mail válido: ejemplo@email.com">
+                                        <input asp-for="Sender" class="input100" placeholder="Ej. ejemplo@email.com">
+                                        <span class="focus-input100"></span>
+                                    </div>
+
+                                    <label class="label-input100" for="subject">Asunto</label>
+                                    <div class="wrap-input100 validate-input" data-validate="Ingrese un asunto">
+                                        <input asp-for="Subject" class="input100" placeholder="Ej. Asunto">
+                                        <span class="focus-input100"></span>
+                                    </div>
+
+                                    <label class="label-input100" for="message">Cuerpo del Mail</label>
+                                    <div class="wrap-input100 validate-input" data-validate="Ingrese su mensaje">
+                                        <textarea asp-for="Message" class="input100" placeholder="Escriba su mensaje"></textarea>
+                                        <span class="focus-input100"></span>
+                                    </div>
+
+
+                                    <div class="container-contact101-form-btn">
+                                        <button class="contact101-form-btn">
+                                            Enviar Mail
+                                        </button>
+                                    </div>
+                                </form>
+
+                                @*Comentarios o Pasos para realizar el Proceso*@
+                                <div class="contact100-more flex-col-c-m" style="background-image: url('images/bg-01.jpg');">
+                                    <div class="flex-w size1 p-b-47" style="width:450px;">
+                                        <div class="txt1 p-r-25">
+                                            <span class="lnr lnr-bookmark"></span>
+                                        </div>
+
+                                        <div class="flex-col size2">
+                                            <span class="txt1 p-b-20">
+                                                Paso 1
+                                            </span>
+
+                                            <span class="txt2">
+                                                * Crear un archivo excel, que contenga obligatoriamente una columna con el nombre de "Email" y NO PUEDE TENER COLUMNAS SIN DATOS. El nombre de la columna debe ser "Email", sin espacios, ya que cualquier otro nombre producirá un error en la aplicación.@*<a style="color:#00ad5f;" href="http://google.com/">Google</a>*@
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="dis-flex size1 p-b-47" style="width:450px;">
+                                        <div class="txt1 p-r-25">
+                                            <span class="lnr lnr-pencil"></span>
+                                        </div>
+
+                                        <div class="flex-col size2">
+                                            <span class="txt1 p-b-20">
+                                                Paso 2
+                                            </span>
+
+                                            <span class="txt2">
+                                                * Crear un archivo de word, con el texto que el Usuario quiera enviar como adjunto a los mails.
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="dis-flex size1 p-b-47" style="width:450px;">
+                                        <div class="txt1 p-r-25">
+                                            <span class="lnr lnr-envelope"></span>
+                                        </div>
+
+                                        <div class="flex-col size2">
+                                            <span class="txt1 p-b-20">
+                                                Paso 3
+                                            </span>
+
+                                            <span class="txt2">
+                                                * La aplicación permite al Usuario componer el texto del CUERPO DEL MAIL(1), el ASUNTO DEL MAIL(2) y el ARCHIVO ADJUNTO DE WORD(3) mediante la utilización de palabras claves relacionadas a las columnas del archvio excel.
+                                                <br />
+                                                El funcionamiento de la composición del texto funciona de la siguiente manera:
+                                                <br />
+                                                <br />
+                                                * Si el Usuario necesita que la información de la columna "POLIZA" aparezca en el archivo de word adjunto, solamente deberá escribir en el archivo word (del PASO 2) la etiqueta #POLIZA#.
+                                                <br />
+                                                * EJEMPLO: Texto del archivo word>>>>   "... queremos informarle que la póliza #POLIZA# ha sido renovada..."
+                                                <br />
+                                                Como lo compondrá la aplicación>>>"... queremos informarle que la póliza 3569582 ha sido renovada..."
+                                                <br />
+                                                * Si el Usuario necesita componer el CUERPO DEL MAIL(1) ó el ASUNTO DEL MAIL(2) deberá utilizar las mismas etiquetas.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dropDownSelect1"></div>
+
+<script>
+    var file = document.getElementById('file-1');
+
+    file.onchange = function (e) {
+        var ext = this.value.match(/\.([^\.]+)$/)[1];
+        switch (ext) {
+            case 'doc':
+            case 'docx':
+                break;
+            default:
+                alert('Solo puede seleccionar archivos word.');
+                this.value = '';
+        }
+    };
+
+    var file = document.getElementById('file-2');
+
+    file.onchange = function (e) {
+        var ext = this.value.match(/\.([^\.]+)$/)[1].toLowerCase();
+        switch (ext) {
+            case 'xls':
+            case 'xlsx':
+            case 'csv':
+                break;
+            default:
+                alert('Solo puede seleccionar archivos Excel.');
+                this.value = '';
+        }
+    };
+
+    var csvfile = document.getElementById('csvfile');
+
+    csvfile.onchange = function (e) {
+        var ext = this.value.match(/\.([^\.]+)$/)[1].toLowerCase();
+        switch (ext) {
+            case 'xls':
+            case 'xlsx':
+            case 'csv':
+                break;
+            default:
+                alert('Solo puede seleccionar archivos Excel.');
+                this.value = '';
+        }
+    };
+
+</script>

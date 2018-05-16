@@ -1,0 +1,61 @@
+﻿@model app.Models.MailData
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <a href="@Url.Action("Index", "Presupuestos")" class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>Presupuestos</h3>
+
+                            <p><h5>Envío Masivo de Presupuestos</h5></p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-files-o"></i>
+                        </div>
+                    </a>
+                        <a href="@Url.Action("Index", "Presupuestos")" class="small-box-footer">
+                            Acceder <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <!-- small box -->
+                <div class="small-box bg-green">
+                    <a href="@Url.Action("Index", "Renovaciones")" class="small-box bg-green">
+                        <div class="inner">
+                            <h3>Renovaciones</h3>
+
+                            <p><h5>Envío Masivo de Renovaciones</h5></p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                        <a href="@Url.Action("Index", "Renovaciones")" class="small-box-footer">
+                            Acceder <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        @*<div class="row">
+                <div class="panel panel-default col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <kendo-chart id="chart" />
+                    <div id="dialog" class="dialog">
+                        <loading ng-show="loadingStatus"></loading>
+                    </div>
+                </div>
+
+            </div>*@
+        <!-- /.row -->
+    </div>
+
+</div>

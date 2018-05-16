@@ -1,0 +1,91 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+/*Estilos para los Tabs de Envío Masivo de Correos*/
+a:hover, a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.tab .nav-tabs {
+    background: #fff;
+}
+
+    .tab .nav-tabs li {
+        text-align: center;
+        margin-right: 3px;
+    }
+
+        .tab .nav-tabs li a {
+            font-size: 15px;
+            font-weight: 600;
+            color: #22272c;
+            padding: 15px 25px;
+            background: #eee;
+            margin-right: 0;
+            border-radius: 0;
+            border: none;
+            text-transform: uppercase;
+            position: relative;
+            transition: all 0.5s ease 0s;
+        }
+
+            .tab .nav-tabs li.active a,
+            .tab .nav-tabs li a:hover {
+                background: #e16b47;
+                color: #fff;
+                border: none;
+            }
+
+.tab .tab-content {
+    font-size: 15px;
+    color: #3d3537;
+    line-height: 30px;
+    padding: 30px 40px;
+    border: 3px solid #e16b47;
+}
+
+    .tab .tab-content h3 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+@media only screen and (max-width: 480px) {
+    .tab .nav-tabs li {
+        width: 100%;
+    }
+}

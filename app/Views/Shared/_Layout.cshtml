@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | MMD</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/normalize.css" />
+        <link rel="stylesheet" href="~/css/demo.css" />
+        <link rel="stylesheet" href="~/css/component.css" />
+        <link rel="icon" type="image/png" href="~/images/img-01.png" />
+
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+
+        <link rel="stylesheet" href="~/fonts/font-awesome-4.7.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" />
+        <link rel="stylesheet" href="~/lib/animate/animate.css" />
+        <link rel="stylesheet" href="~/lib/css-hamburgers/hamburgers.css" />
+        <link rel="stylesheet" href="~/lib/animsition/css/animsition.css" />
+        <link rel="stylesheet" href="~/lib/select2/select2.css" />
+        <link rel="stylesheet" href="~/lib/daterangepicker/daterangepicker.css" />
+        <link rel="stylesheet" href="~/css/main.css" />
+        <link rel="stylesheet" href="~/css/util.css" />
+
+        <link rel="stylesheet" href="~/Admin-LTE/css/AdminLTE.css" />
+        <link rel="stylesheet" href="~/Admin-LTE/css/skins/skin-blue.css" />
+
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        @*<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
+        <link rel="stylesheet" href="~/css/normalize.css" />
+        <link rel="stylesheet" href="~/css/demo.css" />
+        <link rel="stylesheet" href="~/css/component.css" />
+        <link rel="icon" type="image/png" href="~/images/img-01.png" />
+
+        @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
+
+
+        <link rel="stylesheet" href="~/fonts/font-awesome-4.7.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" />
+        <link rel="stylesheet" href="~/lib/animate/animate.css" />
+        <link rel="stylesheet" href="~/lib/css-hamburgers/hamburgers.css" />
+        <link rel="stylesheet" href="~/lib/animsition/css/animsition.css" />
+        <link rel="stylesheet" href="~/lib/select2/select2.css" />
+        <link rel="stylesheet" href="~/lib/daterangepicker/daterangepicker.css" />
+        <link rel="stylesheet" href="~/css/main.css" />
+        <link rel="stylesheet" href="~/css/util.css" />
+
+        <link rel="stylesheet" href="~/Admin-LTE/css/AdminLTE.css" />
+        <link rel="stylesheet" href="~/Admin-LTE/css/skins/skin-blue.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <script>(function (e, t, n) { var r = e.querySelectorAll("html")[0]; r.className = r.className.replace(/(^|\s)no-js(\s|$)/, "$1js$2") })(document, window, 0);</script>
+</head>
+<body>    
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2018 - Envío de Correos Masivos Dinámicamente - Gestión Compartida</p>
+        </footer>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/jquery-3.2.1.min.js"></script>
+        <script src="~/lib/animsition/js/animsition.js"></script>
+        <script src="~/lib/bootstrap/dist/js/popper.js"></script>
+
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/select2/select2.js"></script>
+        <script>
+            $(".selection-2").select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $('#dropDownSelect1')
+            });
+        </script>
+        <script src="~/lib/daterangepicker/moment.js"></script>
+        <script src="~/lib/daterangepicker/daterangepicker.js"></script>
+        <script src="~/lib/countdowntime/countdowntime.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-23581568-13');
+        </script>
+        <script src="~/js/custom-file-input.js"></script>
+        <script src="js/main.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
